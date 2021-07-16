@@ -8,4 +8,5 @@ require (
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/viper v1.8.0
 	golang.org/x/crypto v0.0.0-20210616213533-5ff15b29337e
+	gorm.io/gorm v1.21.12 // indirect
 )
