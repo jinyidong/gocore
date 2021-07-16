@@ -28,3 +28,7 @@ func init() {
 func GetConfig(key string) interface{} {
 	return projConfig.Get(key)
 }
+
+func GetString(key string) string {
+	return projConfig.GetString(key)
+}
