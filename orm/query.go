@@ -110,6 +110,18 @@ func resolveSearchQuery(driver string, q interface{}, condition Condition) {
 			case "desc", "asc":
 				condition.SetOrder(fmt.Sprintf("`%s`.`%s` %s", t.Table, t.Column, qValue.Field(i).String()))
 			}
+		/*
+			geoDistanceStr := fmt.Sprintf("(st_distance(point(longitude,latitude),point(%f,%f))*111195/1000) as geo_distance", c.Longitude, c.Latitude)
+			var gormSelect = []string{"*"}
+			if c.LocationOrder != "" {
+				gormSelect = []string{"*", geoDistanceStr}
+			}
+		*/
+		case "distanceOrder":
+			switch strings.ToLower(qValue.Field(i).String()) {
+			case "desc", "asc":
+				condition.SetOrder(fmt.Sprintf("`geo_distance` %s", qValue.Field(i).String()))
+			}
 		}
 	}
 }
