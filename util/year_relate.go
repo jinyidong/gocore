@@ -7,7 +7,6 @@
 package util
 
 import (
-	"fmt"
 	"time"
 )
 
