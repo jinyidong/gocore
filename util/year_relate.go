@@ -66,7 +66,6 @@ func GetAge(year int) (age int) {
 }
 
 func GetConstellation(month, day int) (star string) {
-	fmt.Println("hello")
 	if month <= 0 || month >= 13 {
 		star = "-1"
 	}
